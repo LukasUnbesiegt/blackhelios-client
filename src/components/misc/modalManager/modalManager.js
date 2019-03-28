@@ -2,13 +2,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import AccountKit from './modals/AccountKitModal'
 
 
 
 // import Modal Components you want in below arrays and use it from here
 
-const modalArrays = [{ name: 'AccountKit', modal: AccountKit }];
+const modalArrays = [];
 
 
 const mapState = (state) => ({

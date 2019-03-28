@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import HeaderFooter from '../../landing/Layout/HeaderFooter'
+
 
 
 
@@ -19,7 +19,6 @@ class DashBoard extends Component {
         const { user } = this.props;
 
 
-        console.log(user)
 
         const renderDashboard = () => {
 
@@ -30,16 +29,7 @@ class DashBoard extends Component {
 
             return (
                 <Fragment>
-                    <HeaderFooter
-                    >
 
-
-
-
-
-
-
-                    </HeaderFooter>
 
                 </Fragment>
             )

@@ -3,7 +3,6 @@ import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Home from './components/landing/Home'
-import Login from './components/login-signup/admin/Login/Login'
 import Authenticated from './components/misc/auth/Authenticated'
 import AdminRoutes from './components/private/AdminRoutes'
 import ModalManager from './components/misc/modalManager/modalManager';
@@ -20,7 +19,7 @@ class Routes extends React.Component {
 
 
   componentDidMount = () => {
-    window.ga('create', 'UA-134280696-1', 'auto');
+    window.ga('create', '', 'auto');
 
 
   }
@@ -42,10 +41,8 @@ class Routes extends React.Component {
         <ModalManager />
         <Switch>
           <Route exact component={Home} path="/" />
-          <Route exact component={Login} path="/login-admin" />
           <AdminRoutes />
-
-          <Route component={NotFound} />
+          <Route path="*" component={NotFound} />
         </Switch>
 
         <MessengerCustomerChat

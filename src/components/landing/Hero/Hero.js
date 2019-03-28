@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import styles from './Hero.module.css'
 import { connect } from 'react-redux'
-
 import { Link, RichText, Date } from 'prismic-reactjs';
 import Prismic from 'prismic-javascript';
-import PrismicHelper from '../../../services/cms/Prismic'
+
 
 import LoadingComponent from '../../misc/Loading/LoadingComponent'
 
