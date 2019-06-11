@@ -5,7 +5,7 @@ import { Link, RichText, Date } from 'prismic-reactjs';
 import Prismic from 'prismic-javascript';
 
 
-import LoadingComponent from '../../misc/Loading/LoadingComponent'
+import LoadingComponent from '../../reusable/Loading/LoadingComponent'
 
 
 class Hero extends Component {

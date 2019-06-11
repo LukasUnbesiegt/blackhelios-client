@@ -5,7 +5,7 @@ import errors from './errorsReducer'
 import localeReducer from './localeReducer'
 import { responsiveStateReducer } from 'redux-responsive'
 import asyncReducer from './asyncReducer';
-import modalReducer from '../components/misc/modalManager/modalReducer'
+import modalReducer from '../components/reusable/modalManager/modalReducer'
 import errorsReducer from './errorsReducer';
 import { connectRouter } from 'connected-react-router'
 import { reducer as toastrReducer } from 'react-redux-toastr'

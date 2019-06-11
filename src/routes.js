@@ -3,9 +3,9 @@ import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Home from './components/landing/Home'
-import Authenticated from './components/misc/auth/Authenticated'
+import Authenticated from './components/reusable/auth/Authenticated'
 import AdminRoutes from './components/private/AdminRoutes'
-import ModalManager from './components/misc/modalManager/modalManager';
+import ModalManager from './components/reusable/modalManager/modalManager';
 import NotFound from './components/NotFound'
 import { trackGoogleAnalytics } from './services/ga/ga'
 
