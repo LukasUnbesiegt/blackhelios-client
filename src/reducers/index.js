@@ -8,7 +8,7 @@ import asyncReducer from './asyncReducer';
 import modalReducer from '../components/misc/modalManager/modalReducer'
 import errorsReducer from './errorsReducer';
 import { connectRouter } from 'connected-react-router'
-
+import { reducer as toastrReducer } from 'react-redux-toastr'
 
 export const reducers = (history) => combineReducers({
         router: connectRouter(history),
@@ -17,5 +17,6 @@ export const reducers = (history) => combineReducers({
         async: asyncReducer,
         modal: modalReducer,
         errors: errorsReducer,
-        browser: responsiveStateReducer
+        browser: responsiveStateReducer,
+        toastr: toastrReducer,
 })

@@ -75,10 +75,6 @@ class PaginationComp extends Component {
 
         return (
 
-
-
-
-
             <div>
                 <Pagination aria-label="Page navigation example" >
 

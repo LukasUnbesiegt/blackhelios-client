@@ -38,7 +38,7 @@ const TextArea = ({ input, rows, styleFrom, type, placeholder, meta: { touched, 
 
 
             </div>
-            {touched && error && <div className="invalid-feedback">{error}</div>}
+            {error && <label className="" style={{ color: 'red', fontSize: '10px' }}>{error}</label>}
 
         </div>
     )

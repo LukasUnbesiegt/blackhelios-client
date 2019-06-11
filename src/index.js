@@ -7,7 +7,7 @@ import Routes from './routes'
 import { BrowserRouter } from 'react-router-dom'
 import ReduxToastr from 'react-redux-toastr'
 import { ConnectedRouter } from 'connected-react-router'
-
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
 
 const store = configureStore().store;
 
@@ -20,6 +20,13 @@ ReactDOM.render(
         <Provider store={store} >
                 <ConnectedRouter history={configureStore().history}>
 
+                        <ReduxToastr
+                                position="bottom-right"
+                                transitionIn="fadeIn"
+                                transitionOut="fadeOut"
+                                timeOut={2000}
+
+                        />
 
                         <div>
 
