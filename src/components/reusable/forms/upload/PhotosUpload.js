@@ -11,13 +11,7 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 
-
 // import { deleteOriginalImg, sendImages } from '../../../../../actions/advertisers/advert'
-
-
-
-
-
 
 class ProductPhotos extends Component {
 
@@ -32,7 +26,6 @@ class ProductPhotos extends Component {
         uploadSuccess: false
 
     }
-
 
 
     componentWillReceiveProps = (prevProps) => {
