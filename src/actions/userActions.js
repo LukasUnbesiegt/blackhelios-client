@@ -1,15 +1,12 @@
 
+
+import axios from 'axios'
+import { toastrs } from 'react-redux-toastr'
 import { LOGIN_USER, AUTH_USER, REGISTER_USER, USER_SERVER, LOGOUT_USER, GET_ERRORS } from './types'
 import authService from '../services/authService'
 import axiosService from '../services/axiosService'
 import { asyncActionStart, asyncActionFinish, asyncActionError } from './asyncActions'
-import toastr from 'react-redux-toastr'
-
-
-import axios from 'axios'
-
 import { endpoint, prodEndpoint } from '../config'
-
 const URL = process.env.NODE_ENV === 'development' ? endpoint : prodEndpoint
 const axiosInstance = axiosService.getInstance();
 
@@ -27,14 +24,7 @@ export function registerUser(dataToSubmit) {
 }
 
 
-
-
-
-
 export function loginUser(dataToSubmit, history) {
-
-
-
   return async (dispatch) => {
 
 
@@ -53,14 +43,9 @@ export function loginUser(dataToSubmit, history) {
         })
       }
 
-
     } catch (error) {
 
-
     }
-
-
-
   }
 
 
@@ -68,8 +53,9 @@ export function loginUser(dataToSubmit, history) {
 
 
 }
-export function fbLogin(dataToSubmit, history) {
 
+
+export function fbLogin(dataToSubmit, history) {
 
 
   return async (dispatch) => {
@@ -91,15 +77,11 @@ export function fbLogin(dataToSubmit, history) {
       console.log(error)
     }
 
-
-
   }
-
-
-
-
-
 }
+
+
+
 
 export function auth(history, reload) {
 

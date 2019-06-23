@@ -15,7 +15,6 @@ export const configureStore = (preloadedState) => {
 
   const middlewares = [Thunk, PromiseMiddleware, routerMiddleware(history)];
   const middlewareEnhancer = applyMiddleware(...middlewares);
-
   const storeEnhancers = [middlewareEnhancer, responsiveStoreEnhancer];
 
   const composedEnhancer = composeWithDevTools(

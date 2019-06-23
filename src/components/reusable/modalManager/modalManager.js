@@ -25,7 +25,7 @@ const ModalManager = ({ currentModal }) => {
         const ModalWeWant = modalArrays.find((modal) => {
             return modal.name = modalType
         })
-        console.log(ModalWeWant);
+
         const ModalComponent = ModalWeWant.modal;
 
         renderModal = <ModalComponent {...modalProps} />;

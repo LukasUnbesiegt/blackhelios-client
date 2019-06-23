@@ -1,12 +1,12 @@
 
 import { GET_ERRORS, CLEAR_ERRORS } from '../actions/types'
+
+
 const initialState = {
 
 }
 
 export default (state = initialState, { type, payload }) => {
-
-
 
     switch (type) {
 
