@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Hero.module.css'
 import { connect } from 'react-redux'
-import { Button } from 'reactstrap'
+
 
 
 
@@ -34,6 +34,7 @@ class Hero extends Component {
             <div className="container text-center my-2 py-2">
 
                 <h4 className="display-3">Black Helios Boilerplate</h4>
+
 
             </div>
         )
