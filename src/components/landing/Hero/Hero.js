@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import styles from './Hero.module.css'
 import { connect } from 'react-redux'
-import { Link, RichText, Date } from 'prismic-reactjs';
-import Prismic from 'prismic-javascript';
+import { Button } from 'reactstrap'
 
 
-import LoadingComponent from '../../reusable/Loading/LoadingComponent'
 
 
 class Hero extends Component {
@@ -33,9 +31,11 @@ class Hero extends Component {
 
 
         return (
-            <div>
-                HERO
-                </div>
+            <div className="container text-center my-2 py-2">
+
+                <h4 className="display-3">Black Helios Boilerplate</h4>
+
+            </div>
         )
 
 
