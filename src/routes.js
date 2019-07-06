@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Home from './components/landing/Home'
@@ -12,6 +12,7 @@ import { trackGoogleAnalytics } from './services/ga/ga'
 
 
 
+
 class Routes extends React.Component {
 
 
@@ -20,8 +21,6 @@ class Routes extends React.Component {
 
   componentDidMount = () => {
     window.ga('create', '', 'auto');
-
-
   }
 
 
@@ -36,9 +35,10 @@ class Routes extends React.Component {
 
     return (
 
-      <div>
+      <Fragment>
 
         <ModalManager />
+
         <Switch>
           <Route exact component={Home} path="/" />
           <AdminRoutes />
@@ -50,7 +50,7 @@ class Routes extends React.Component {
           appId=""
           htmlRef=""
         />
-      </div >
+      </Fragment >
 
 
 

@@ -14,6 +14,7 @@
     "html-to-draftjs": "^1.4.0",
     "http-proxy-middleware": "^0.19.1",
     "moment": "^2.22.2",
+    "polished": "^3.4.1",
     "prismic-javascript": "^1.5.0",
     "prismic-reactjs": "^0.3.2",
     "prop-types": "^15.7.2",
