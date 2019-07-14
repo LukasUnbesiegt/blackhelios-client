@@ -10,7 +10,7 @@
 /build
 
 
-/src/assets
+/public/assets
 # misc
 .DS_Store
 .env.local

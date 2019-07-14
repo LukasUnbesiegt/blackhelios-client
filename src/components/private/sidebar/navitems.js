@@ -4,7 +4,7 @@ export const navitems = [
     {
         name: 'sample',
         linkTo: '/admin',
-        icon: 'fa-archive',
+        icon: 'fas fa-archive',
         admin: false,
         dropdowns: true,
         links: [
@@ -33,14 +33,14 @@ export const navitems = [
     {
         name: 'sample 2',
         linkTo: '/admin/',
-        icon: 'fa-users',
+        icon: 'fas fa-users',
         admin: false,
         dropdowns: false
     },
     {
         name: 'sample 3',
         linkTo: '/admin/',
-        icon: 'fa fa-address-card',
+        icon: 'fas fa-address-card',
         admin: false,
         dropdowns: false
     },

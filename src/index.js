@@ -10,9 +10,6 @@ import { ConnectedRouter } from 'connected-react-router'
 // CSS IMPORTING
 
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
-import "./assets/vendor/nucleo/css/nucleo.css";
-import "./assets/vendor/font-awesome/css/font-awesome.min.css";
-import "./assets/css/argon-design-system-react.css";
 import './index.css'
 
 

@@ -44,7 +44,7 @@ class SideBar extends Component {
 
                                             to={item.linkTo}
                                         >
-                                            <i className={`fa ${item.icon} fa-lg`}></i>
+                                            <i className={`${item.icon} fa-lg`}></i>
                                             <span
                                                 style={{
                                                     fontSize: '12px'
