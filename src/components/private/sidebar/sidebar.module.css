@@ -1,19 +1,15 @@
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,300,400,700");
 
 .borderLine {
-    border-bottom: 1px solid white;
-
+	border-bottom: 1px solid white;
 }
 
 .sidebarlink {
-    transition: all 2s;
-    font-family: 'Poppins', sans-serif !important;
-   
+	transition: all 2s;
+	font-family: "Poppins", sans-serif !important;
 }
 
 .sidebarlink:hover {
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif !important;
-   
-  }
+	border-radius: 5px;
+	font-family: "Poppins", sans-serif !important;
+}

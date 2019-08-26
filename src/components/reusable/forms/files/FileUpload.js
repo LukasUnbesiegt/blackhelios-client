@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ReactCrop, { makeAspectCrop } from 'react-image-crop';
-import 'react-image-crop/dist/ReactCrop.css';
+// import ReactCrop, { makeAspectCrop } from 'react-image-crop';
+// import 'react-image-crop/dist/ReactCrop.css';
 // import { sendImage , deleteImage } from '../../../../actions/productsActions'
 import styles from './FileUpload.module.css'
 import Cropper from 'react-cropper'

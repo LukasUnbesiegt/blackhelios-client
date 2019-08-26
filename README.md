@@ -1,3 +1,3 @@
+## BH CLIENT BOILETPLATE
 
-## BH CLIENT BOILETPLATE 
-* February 2019 revision
+- Aug 2019 revision

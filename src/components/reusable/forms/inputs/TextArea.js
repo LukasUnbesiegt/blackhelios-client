@@ -1,22 +1,17 @@
-import React from 'react'
+import React from "react";
 
-
-
-
-
-
-const TextArea = ({ input, rows, styleFrom, type, placeholder, meta: { touched, error } }) => {
-
-
-
-
-    return (
-
-
-        <div className="form-group mb-3">
-
-            <div className="input-group input-group-alternative">
-                {/* {
+const TextArea = ({
+	input,
+	rows,
+	styleFrom,
+	type,
+	placeholder,
+	meta: { touched, error }
+}) => {
+	return (
+		<div className="form-group mb-3">
+			<div className="input-group input-group-alternative">
+				{/* {
                     prepend &&
                     (
                         <div className="input-group-prepend">
@@ -26,22 +21,18 @@ const TextArea = ({ input, rows, styleFrom, type, placeholder, meta: { touched, 
                         </div>
                     )
                 } */}
-                <textarea
-                    type={type}
-                    className="form-control"
-                    {...input}
-                    rows={rows}
-                    placeholder={placeholder}
-                    style={styleFrom}
-
-                />
-
-
-            </div>
-            {error && <label className="" style={{ color: 'red', fontSize: '10px' }}>{error}</label>}
-
-        </div>
-    )
-}
+				<textarea
+					type={type}
+					className="form-control"
+					{...input}
+					rows={rows}
+					placeholder={placeholder}
+					style={styleFrom}
+				/>
+			</div>
+			{touched && error && <div className="invalid-feedback">{error}</div>}
+		</div>
+	);
+};
 
 export default TextArea;

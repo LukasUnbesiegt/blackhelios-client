@@ -15,7 +15,6 @@ class MultiSelectInput extends Component {
     }
 
 
-
     addOption = (value, input) => {
 
 
@@ -56,6 +55,10 @@ class MultiSelectInput extends Component {
 
 
         const renderPills = () => {
+
+
+
+
 
             if (this.state.selectedOptions.length > 0) {
 
@@ -99,6 +102,8 @@ class MultiSelectInput extends Component {
 
 
             <div className="form-group mb-3">
+
+
 
                 <select
                     className="custom-select"
