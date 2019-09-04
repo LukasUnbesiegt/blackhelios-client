@@ -1,33 +1,97 @@
-import React, { Component } from "react";
+import React from "react";
+import CreatableSelect from "react-select/creatable";
 import Select from "react-select";
-class SelectComp extends Component {
+
+class SelectInput extends React.Component {
+	state = {
+		isLoading: false
+	};
+
+	handleCreate = inputValue => {
+		this.setState({ isLoading: true });
+		/**
+		 * 1 - REDUX ACTION CALL (2ND CALL - getCompaines)
+		 * 2 - newValue ( props )
+		 * 3 - input.onChange(newValue)
+		 * 4 - loading = false
+		 */
+	};
+	normalHandleChange = inputValue => {
+		const { input } = this.props;
+		input.onChange(inputValue);
+	};
+
+	handleChange = inputValue => {
+		const { input } = this.props;
+		input.onChange(inputValue);
+	};
 	render() {
 		const {
-			options,
-			placeholder,
-			multi = false,
 			input,
+			type,
+			placeholder,
+			isMulti,
+			options,
+			multiple,
+			meta: { touched, error },
 			customStyles
 		} = this.props;
+		const { isLoading } = this.state;
 
-		return (
-			<div>
-				<Select
-					options={options}
-					isClearable
-					onBlur={() => input.onBlur(input.value)}
-					isSearchable
-					placeholder={placeholder}
-					isMulti={multi}
-					onChange={value => {
-						input.onChange(value);
-					}}
-					styles={customStyles}
-					value={input.value}
-				/>
-			</div>
-		);
+		console.log("input", input);
+		switch (type) {
+			case "create":
+				return (
+					<div className="form-group mb-3">
+						<CreatableSelect
+							isClearable
+							isDisabled={isLoading}
+							isLoading={isLoading}
+							placeholder={placeholder}
+							options={options}
+							isMulti={isMulti}
+							onChange={this.handleChange}
+							onCreateOption={this.handleCreate}
+							value={input.value}
+							styles={customStyles}
+						/>
+					</div>
+				);
+				break;
+			case "normal":
+				return (
+					<div className="form-group mb-3">
+						<Select
+							isClearable
+							placeholder={placeholder}
+							options={options}
+							isMulti={isMulti}
+							onChange={this.normalHandleChange}
+							value={input.value}
+							onBlur={() => input.onBlur(input.value)}
+							styles={customStyles}
+						/>
+					</div>
+				);
+				break;
+			default:
+				return (
+					<div className="form-group mb-3">
+						<Select
+							isClearable
+							placeholder={placeholder}
+							options={options}
+							isMulti={isMulti}
+							onChange={this.normalHandleChange}
+							value={input.value}
+							onBlur={() => input.onBlur(input.value)}
+							styles={customStyles}
+						/>
+					</div>
+				);
+				break;
+		}
 	}
 }
 
-export default SelectComp;
+export default SelectInput;

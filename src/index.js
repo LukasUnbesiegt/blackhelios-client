@@ -7,7 +7,7 @@ import { ConnectedRouter } from "connected-react-router";
 
 // CSS IMPORTING
 import "./index.css";
-
+import "react-quill/dist/quill.snow.css"; // ES6
 const store = configureStore().store;
 
 ReactDOM.render(
