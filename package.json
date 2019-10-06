@@ -28,7 +28,6 @@
 		"react-dom": "^16.9.0",
 		"react-draft-wysiwyg": "^1.13.2",
 		"react-dropzone": "^10.1.8",
-		"react-facebook-account-kit": "^0.1.5",
 		"react-facebook-login": "^4.1.1",
 		"react-flatpickr": "^3.9.1",
 		"react-helmet": "^5.2.1",

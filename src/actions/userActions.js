@@ -1,5 +1,4 @@
 import axios from "axios";
-import { toastrs } from "react-redux-toastr";
 import {
 	LOGIN_USER,
 	AUTH_USER,
