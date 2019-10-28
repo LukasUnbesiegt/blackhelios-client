@@ -1,38 +1,42 @@
 import React from "react";
 
 const TextInput = ({
-	input,
+	label,
 	type,
-	placeholder,
+	field, // { name, value, onChange, onBlur }
+	form, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
 	prepend,
-	logo,
-	styleFrom,
-	meta: { touched, error }
+	icon,
+	...props
 }) => {
+	let valid = form.errors[field.name] ? "is-invalid" : null;
 	return (
 		<div className="form-group mb-3">
-			<div className="input-group input-group-alternative ">
+			<label for="validationServer04" style={{ letterSpacing: "1px" }}>
+				{field.name}
+			</label>
+			<div class="input-group mb-1 ">
 				{prepend && (
-					<div className="input-group-prepend">
-						<span className="input-group-text">
-							<i className={logo}></i>
+					<div class="input-group-prepend">
+						<span class="input-group-text">
+							<i className={icon}></i>
 						</span>
 					</div>
 				)}
+
 				<input
 					type={type}
-					className="form-control"
-					style={styleFrom}
-					{...input}
-					placeholder={placeholder}
+					{...field}
+					className={`form-control ${valid}`}
+					{...props}
 				/>
 			</div>
 
-			{error && (
-				<label className="" style={{ color: "red", fontSize: "10px" }}>
-					{error}
-				</label>
-			)}
+			{
+				<div style={{ fontSize: "10px", color: "red" }}>
+					{form.errors[field.name]}
+				</div>
+			}
 		</div>
 	);
 };

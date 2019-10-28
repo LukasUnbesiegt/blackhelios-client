@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { auth } from "../../../actions/userActions";
 import { withRouter } from "react-router-dom";
-import Loading from "../Loading/LoadingComponent1/LoadingComponent";
+import Loader from "react-loader-spinner";
 
 export default function(ComposedClass) {
 	class AuthenticationCheck extends Component {
@@ -17,10 +17,15 @@ export default function(ComposedClass) {
 						{...this.props}
 						user={this.props.user.userData}
 						browser={this.props.browser}
+						async={this.props.async}
 					/>
 				);
 			} else {
-				return <Loading />;
+				return (
+					<div style={{}}>
+						<Loader type="Puff" color="#00BFFF" height={100} width={100} />
+					</div>
+				);
 			}
 		}
 	}

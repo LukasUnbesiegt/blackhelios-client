@@ -18,14 +18,11 @@ class Routes extends React.Component {
 
 		return (
 			<Fragment>
-				<ModalManager />
-
 				<Switch>
-					<Route exact component={Home} path="/" />
+					<Route exact path="/" render={() => <Home />} />
 					<AdminRoutes />
 					<Route path="*" component={NotFound} />
 				</Switch>
-
 				<MessengerCustomerChat pageId="" appId="" htmlRef="" />
 			</Fragment>
 		);

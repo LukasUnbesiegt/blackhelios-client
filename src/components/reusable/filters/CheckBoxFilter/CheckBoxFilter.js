@@ -29,22 +29,20 @@ class CheckBoxFilter extends Component {
 
 	handleToggle = valueId => {
 		const { checked } = this.state;
-
 		const currentIndex = checked.indexOf(valueId);
 		const newChecked = [...checked];
-
 		if (currentIndex === -1) {
 			newChecked.push(valueId);
 		} else {
 			newChecked.splice(currentIndex, 1);
 		}
-
 		this.setState(
 			{
 				checked: newChecked
 			},
 			() => {
-				this.props.handleFilters(newChecked);
+				console.log("newChecked", newChecked);
+				// this.props.handleFilters(newChecked);
 			}
 		);
 	};
@@ -97,3 +95,22 @@ class CheckBoxFilter extends Component {
 }
 
 export default CheckBoxFilter;
+
+/**
+ *  filter function
+ *
+ */
+// handleFilters = (filters, category) => {
+// 	const newFilters = { ...this.state.filters };
+// 	newFilters[category] = filters;
+
+// 	if (category === "price") {
+// 		let priceValues = this.handlePrice(filters);
+// 		newFilters[category] = priceValues;
+// 	}
+
+// 	this.reduxActionToCall(this.state.page, newFilters);
+// 	this.setState({
+// 		filters: newFilters
+// 	});
+// };

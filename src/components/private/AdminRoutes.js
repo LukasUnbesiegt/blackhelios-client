@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Home/Home";
 import Authenticated from "../reusable/HOC/Authenticated";
-
 import SideBar from "./sidebar/index";
 import TopBar from "./topbar/TopBar";
 import styles from "./AdminRoutes.module.css";
@@ -86,13 +85,5 @@ class AdminRoutes extends Component {
 		);
 	}
 }
-
-// const mapStateToProps = (state) => ({
-
-// })
-
-// const mapDispatchToProps = {
-
-// }
 
 export default connect()(AdminRoutes);
