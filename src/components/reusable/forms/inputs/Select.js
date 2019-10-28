@@ -17,28 +17,27 @@ class SelectInput extends React.Component {
 		 */
 	};
 	normalHandleChange = inputValue => {
-		const { input } = this.props;
-		input.onChange(inputValue);
+		const { field } = this.props;
+		field.onChange(inputValue.value);
 	};
 
 	handleChange = inputValue => {
-		const { input } = this.props;
-		input.onChange(inputValue);
+		const { field } = this.props;
+		field.onChange(inputValue.value);
 	};
 	render() {
 		const {
-			input,
-			type,
-			placeholder,
+			label,
 			isMulti,
+			placeholder,
+			type,
 			options,
-			multiple,
-			meta: { touched, error },
-			customStyles
+			field,
+			form,
+			styles
 		} = this.props;
 		const { isLoading } = this.state;
 
-		console.log("input", input);
 		switch (type) {
 			case "create":
 				return (
@@ -52,8 +51,8 @@ class SelectInput extends React.Component {
 							isMulti={isMulti}
 							onChange={this.handleChange}
 							onCreateOption={this.handleCreate}
-							value={input.value}
-							styles={customStyles}
+							value={field.value}
+							styles={styles}
 						/>
 					</div>
 				);
@@ -62,14 +61,13 @@ class SelectInput extends React.Component {
 				return (
 					<div className="form-group mb-3">
 						<Select
-							isClearable
 							placeholder={placeholder}
 							options={options}
 							isMulti={isMulti}
 							onChange={this.normalHandleChange}
-							value={input.value}
-							onBlur={() => input.onBlur(input.value)}
-							styles={customStyles}
+							value={field.value}
+							onBlur={() => {}}
+							styles={styles}
 						/>
 					</div>
 				);
@@ -78,14 +76,13 @@ class SelectInput extends React.Component {
 				return (
 					<div className="form-group mb-3">
 						<Select
-							isClearable
 							placeholder={placeholder}
 							options={options}
 							isMulti={isMulti}
 							onChange={this.normalHandleChange}
-							value={input.value}
-							onBlur={() => input.onBlur(input.value)}
-							styles={customStyles}
+							value={field.value}
+							onBlur={() => {}}
+							styles={styles}
 						/>
 					</div>
 				);

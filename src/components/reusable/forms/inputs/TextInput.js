@@ -1,14 +1,6 @@
 import React from "react";
 
-const TextInput = ({
-	label,
-	type,
-	field, // { name, value, onChange, onBlur }
-	form, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-	prepend,
-	icon,
-	...props
-}) => {
+const TextInput = ({ label, type, field, form, prepend, icon, ...props }) => {
 	let valid = form.errors[field.name] ? "is-invalid" : null;
 	return (
 		<div className="form-group mb-3">

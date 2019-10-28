@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import styles from "./Hero.module.css";
 import { connect } from "react-redux";
-
 import Register from "../../accounts/register/Register";
+import Editor from "../../reusable/forms/editor/quill/Editor";
+import SinglePhoto from "../../reusable/forms/files/image_upload/single/PhotoUploadSingle";
+import Editor2 from "../../reusable/forms/editor/Editor";
+import MultiplePhoto from "../../reusable/forms/files/image_upload/multiple/PhotoUploadMultiple";
 class Hero extends Component {
 	state = {
 		doc: null
@@ -18,6 +21,21 @@ class Hero extends Component {
 
 				<div>
 					<Register />
+				</div>
+				<div>
+					<Editor />
+				</div>
+				<div>
+					<Editor2
+						description="description"
+						initialContent={`<div>sample</div>`}
+					/>
+				</div>
+				<div>
+					<MultiplePhoto />
+				</div>
+				<div>
+					<SinglePhoto />
 				</div>
 			</div>
 		);

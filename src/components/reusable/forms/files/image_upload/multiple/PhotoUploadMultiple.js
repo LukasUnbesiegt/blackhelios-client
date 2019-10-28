@@ -1,6 +1,4 @@
-
 import React, { Component, Fragment } from 'react'
-import { toastr } from 'react-redux-toastr'
 import Dropzone  from 'react-dropzone'
 import Cropper from 'react-cropper'
 import 'cropperjs/dist/cropper.css'
@@ -9,15 +7,8 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
-
-import { deleteOriginalImg, sendImages } from '../../../../../actions/productsActions'
-
-
-
-
-
-
-class ProductPhotos extends Component {
+const cropper = React.createRef(null);
+class PhotoMultiple extends Component {
 
 
     state = {
@@ -32,9 +23,8 @@ class ProductPhotos extends Component {
 
     componentWillReceiveProps = (prevProps) => {
 
-
         if (prevProps.initialImages.length > 0) {
-            console.log('happen')
+          
             this.setState({
                 images: [...prevProps.initialImages]
             }, () => {
@@ -43,13 +33,11 @@ class ProductPhotos extends Component {
         }
 
 
-
-
     }
 
     onDrop = (files) => {
 
-       console.log('files' , files);
+     
         this.setState({
             files: [URL.createObjectURL(files[0])],
             fileName: files[0].name
@@ -59,7 +47,7 @@ class ProductPhotos extends Component {
 
 
 
-    cropImage = () => {
+    cropImage  ()  {
 
         if (typeof this.refs.cropper.getCroppedCanvas() === 'undefined') {
             return;
@@ -76,9 +64,6 @@ class ProductPhotos extends Component {
                     image: blob
                 }
             })
-
-
-
         })
 
 
@@ -101,7 +86,9 @@ class ProductPhotos extends Component {
         this.setState({
             files: [],
             image: {}
-        })
+        } , () => {
+			console.log('cropper' , this.refs.cropper)
+		})
     }
 
 
@@ -150,15 +137,15 @@ class ProductPhotos extends Component {
 
     deleteImage = (imageId, productId) => {
 
-        this.props.deleteOriginalImg(imageId, productId)
+        // this.props.deleteOriginalImg(imageId, productId)
         let filteredImages = this.state.images.filter((image) => {
             return image.public_id !== imageId;
         })
         this.setState({
             images: filteredImages
         }, () => {
-            this.props.input.onChange(this.state.images)
-            toastr.warning('deleted')
+            // this.props.input.onChange(this.state.images)
+           
         })
     }
 
@@ -178,8 +165,6 @@ class ProductPhotos extends Component {
                                     color: 'red'
                                 }}
                                 onClick={() => {
-
-
                                     // this.deleteImage(image.public_id, this.props.productId)
 
                                 }}
@@ -202,24 +187,13 @@ class ProductPhotos extends Component {
 
 
 
-
-
     render() {
 
-
-
-
-
-
         return (
-
-
-
-
             <Fragment>
 
                 <div className="container-fluid my-4">
-                    <h4 className="text-center">Upload Photos</h4>
+                  
                     <div className="row">
 
                         <div className="col-md-4 col-lg-4">
@@ -231,22 +205,19 @@ class ProductPhotos extends Component {
                          multiple={false}
                          accept="image/*"
                          >
-  {({getRootProps, getInputProps}) => (
-   
-        <div class="custom-file"  {...getRootProps()}>
-  <input type="file" class="custom-file-input" id="customFile" {...getInputProps()}/>>
-  <label class="custom-file-label">{this.state.fieldName || 'upload photo'}</label>
-</div>      
-   
-  )}
-</Dropzone>
+						{({getRootProps, getInputProps}) => (
+						
+								<div class="custom-file"  {...getRootProps()}>
+						<input type="file" class="custom-file-input" id="customFile" {...getInputProps()}/>>
+						<label class="custom-file-label">{this.state.fieldName || 'choose files'}</label>
+						</div>      
+						
+						)}
+				</Dropzone>
 
 
                         </div>
                         <div className="col-md-6 col-lg-6">
-
-
-
                             {
                                 this.state.files[0] && (
                                     <div className="row">
@@ -262,10 +233,9 @@ class ProductPhotos extends Component {
                                                 scalable={false}
                                                 cropBoxMovable={true}
                                                 cropBoxResizable={true}
-                                                crop={this.cropImage}
+                                                crop={this.cropImage.bind(this)}
 
                                             />
-
                                         </div>
                                         <div className="col-md-4">
                                             <div className="btn-group btn-group-sm" role="group" >
@@ -290,15 +260,12 @@ class ProductPhotos extends Component {
 
 
 
-
-
                         </div>
 
 
                     </div>
 
-                    {this.state.filesCropped.length > 0 && <h4>New Images</h4>}
-
+    
                     <div
                         style={{
                             display: 'flex',
@@ -308,14 +275,13 @@ class ProductPhotos extends Component {
                         }}
 
                     >
-
                         {
 
                             this.state.filesCropped && this.state.filesCropped.map((image) => {
 
                                 return (
 
-                                    <div>
+                                    <div className="mx-1">
 
                                         <i
                                             className="ni ni-fat-remove"
@@ -330,7 +296,7 @@ class ProductPhotos extends Component {
                                         </i>
 
                                         <br />
-                                        <img style={{ height: '150', width: '150px' , objectFit : 'cover' }} src={image.tempurl} alt="Card image cap" />
+                                        <img style={{ height: '150', width: '150px' , objectFit : 'cover'  }} src={image.tempurl} alt="Card image cap" />
                                     </div>
 
 
@@ -374,16 +340,4 @@ class ProductPhotos extends Component {
 }
 
 
-
-
-
-
-const mapDispatchToProps = {
-    // deleteOriginalImg,
-    // sendImages
-}
-
-
-
-
-export default connect(null, mapDispatchToProps)(ProductPhotos);
+export default PhotoMultiple

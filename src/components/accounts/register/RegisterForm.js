@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import TextInput from "../../reusable/forms/inputs/TextInput";
 import { validate } from "./validateRegister";
-
+import Select from "../../reusable/forms/inputs/Select";
+import CheckBox from "../../reusable/forms/inputs/CheckBox";
+import DateRangePicker from "../../reusable/forms/inputs/dates/DateRangePicker";
+import SinglePicker from "../../reusable/forms/inputs/dates/SingleDatePicker";
 function RegisterForm({ initialValues, submitCallBack }) {
 	return (
 		<div className="container card my-2 py-2 shadow">
@@ -51,6 +54,53 @@ function RegisterForm({ initialValues, submitCallBack }) {
 										icon="fas fa-key"
 										style={{}}
 										placeholder="password"
+									/>
+								</div>
+								<div className="col-md-6">
+									<Field
+										component={Select}
+										name="select"
+										type="normal"
+										options={[
+											{
+												label: "new",
+												value: "new"
+											}
+										]}
+										style={{}}
+										placeholder="select samples"
+									/>
+								</div>
+								<div className="col-md-6">
+									<Field
+										component={CheckBox}
+										name="check"
+										type="checkbox"
+										label="check"
+									/>
+								</div>
+								<div>
+									<Field
+										name="dates"
+										component={DateRangePicker}
+										enableTime={true}
+										style={{
+											width: "300px",
+											margin: "20px",
+											padding: "20px"
+										}}
+									/>
+								</div>
+								<div>
+									<Field
+										name="date"
+										component={SinglePicker}
+										enableTime={true}
+										style={{
+											width: "300px",
+											margin: "20px",
+											padding: "20px"
+										}}
 									/>
 								</div>
 							</div>

@@ -21,7 +21,9 @@ class Register extends Component {
 					initialValues={{
 						email: "",
 						password: "",
-						username: ""
+						username: "",
+						dates: [Date.now(), Date.now()],
+						date: Date.now()
 					}}
 					error={this.state.error}
 				/>

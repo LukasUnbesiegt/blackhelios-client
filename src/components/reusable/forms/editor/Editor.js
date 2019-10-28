@@ -14,14 +14,11 @@ class EditorComponent extends Component {
 
 	componentWillReceiveProps(prevProps) {
 		const html = prevProps.initialContent;
-		console.log("prevprops", prevProps);
-
 		const contentBlock = htmlToDraft(html);
 		const contentState = ContentState.createFromBlockArray(
 			contentBlock.contentBlocks
 		);
 		const editorState = EditorState.createWithContent(contentState);
-
 		if (this.props.initialContent !== prevProps.initialContent) {
 			this.setState({
 				editorState: editorState
@@ -35,7 +32,6 @@ class EditorComponent extends Component {
 			contentBlock.contentBlocks
 		);
 		const editorState = EditorState.createWithContent(contentState);
-
 		if (this.props.initialContent) {
 			this.setState({
 				editorState: editorState
@@ -50,13 +46,10 @@ class EditorComponent extends Component {
 	};
 
 	render() {
-		const { input } = this.props;
-
 		return (
 			<div className="container my-3 py-3">
 				<div className="">
 					<div className="col-12">
-						<h4>{this.props.description}</h4>
 						<Editor
 							editorClassName={`${styles.editor}`}
 							editorState={this.state.editorState}
@@ -65,8 +58,7 @@ class EditorComponent extends Component {
 								let htmlContents = draftToHtml(
 									convertToRaw(this.state.editorState.getCurrentContent())
 								);
-
-								input.onChange(htmlContents);
+								console.log("htm-content", htmlContents);
 							}}
 						/>
 					</div>

@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-import { reducer as formReducer } from "redux-form";
 import userReducer from "./userReducer";
 import errors from "./errorsReducer";
 import localeReducer from "./localeReducer";
@@ -13,7 +12,6 @@ export const reducers = history =>
 	combineReducers({
 		router: connectRouter(history),
 		locale: localeReducer,
-		form: formReducer,
 		user: userReducer,
 		async: asyncReducer,
 		errors: errorsReducer,

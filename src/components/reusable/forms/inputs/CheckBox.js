@@ -1,6 +1,6 @@
 import React from "react";
 
-const RadioInput = ({ input, width, type, label }) => {
+const RadioInput = ({ label, type, field, form, ...props }) => {
 	return (
 		<div className="form-group mb-3">
 			<div className="form-check">
@@ -9,7 +9,8 @@ const RadioInput = ({ input, width, type, label }) => {
 					type={type}
 					id="invalidCheck2"
 					required
-					{...input}
+					{...field}
+					{...props}
 				/>{" "}
 				<label className="form-check-label" htmlFor="invalidCheck2">
 					{label}
