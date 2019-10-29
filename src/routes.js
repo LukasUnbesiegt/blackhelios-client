@@ -7,7 +7,7 @@ import AdminRoutes from "./components/private/AdminRoutes";
 import ModalManager from "./components/reusable/modalManager/modalManager";
 import NotFound from "./components/NotFound";
 import { trackGoogleAnalytics } from "./services/ga/ga";
-
+import { Helmet } from "react-helmet";
 class Routes extends React.Component {
 	componentDidMount = () => {
 		window.ga("create", "", "auto");
@@ -18,6 +18,11 @@ class Routes extends React.Component {
 
 		return (
 			<Fragment>
+				<Helmet>
+					<title>BH Boilperplate</title>
+					<meta name="description" content="black helio" />
+					<meta name="keywords" content="react,seo,helmet" />
+				</Helmet>
 				<Switch>
 					<Route exact path="/" render={() => <Home />} />
 					<AdminRoutes />
