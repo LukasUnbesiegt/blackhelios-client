@@ -17,7 +17,7 @@ class DateRangePicker extends Component {
 				<div className="my-2 py-2 text-center container form-input">
 					<Flatpickr
 						options={{ mode: "range", enableTime: enableTime }}
-						theme={"light"}
+						
 						value={field.value}
 						className="p-1 m-1"
 						style={style}

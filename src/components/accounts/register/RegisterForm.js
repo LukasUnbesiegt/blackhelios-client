@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import TextInput from "../../reusable/forms/inputs/TextInput";
-import { validate } from "./validateRegister";
+import { validateHelper as validate } from "../../../utils/validationHelper";
 import Select from "../../reusable/forms/inputs/Select";
 import CheckBox from "../../reusable/forms/inputs/CheckBox";
 import DateRangePicker from "../../reusable/forms/inputs/dates/DateRangePicker";
@@ -17,7 +17,26 @@ function RegisterForm({ initialValues, submitCallBack }) {
 					});
 				}}
 				initialValues={initialValues}
-				validate={validate}
+				validate={values => {
+					return validate(values, [
+						{
+							key: "email",
+							required: true,
+							method: {
+								func: "isEmail",
+								message: "email is invalid"
+							}
+						},
+						{
+							key: "username",
+							required: true
+						},
+						{
+							key: "password",
+							required: true
+						}
+					]);
+				}}
 			>
 				{({ isSubmitting, resetForm }) => {
 					return (
