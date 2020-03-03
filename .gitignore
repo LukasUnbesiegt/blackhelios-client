@@ -1,15 +1,12 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
-
+package-lock.json
 # dependencies
 /node_modules
 
 # testing
 /coverage
-
 # production
 /build
-
-
 /public/assets
 # misc
 .DS_Store
