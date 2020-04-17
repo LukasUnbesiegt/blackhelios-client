@@ -5,12 +5,10 @@ import Authenticated from "./components/reusable/HOC/Authenticated";
 import AdminRoutes from "./components/private/AdminRoutes";
 import ModalManager from "./components/reusable/modalManager/modalManager";
 import NotFound from "./components/NotFound";
-import { trackGoogleAnalytics } from "./services/ga/ga";
+import { trackGoogleAnalytics } from "./external/ga/ga";
 import { Helmet } from "react-helmet";
 class Routes extends React.Component {
-  componentDidMount = () => {
-    window.ga("create", "", "auto");
-  };
+  componentDidMount = () => {};
 
   render() {
     trackGoogleAnalytics(this.props.location);
