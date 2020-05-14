@@ -10,17 +10,18 @@ import {
   socketIOSubscriberMiddleware,
 } from "./middlewares/socket";
 import { responsiveStoreEnhancer } from "redux-responsive";
-import { endpoint, prodEndpoint } from "./config";
-const URL = process.env.NODE_ENV === "development" ? endpoint : prodEndpoint;
+import { endpoint_ws, prodEndpoint_ws } from "./config";
+const URL =
+  process.env.NODE_ENV === "development" ? endpoint_ws : prodEndpoint_ws;
 const history = createBrowserHistory();
-const socket = io.connect(URL);
+// const socket = io.connect(URL);
 
 export const configureStore = (preloadedState) => {
   const middlewares = [
     Thunk,
     routerMiddleware(history),
-    socketIOSubscriberMiddleware(socket),
-    socketIOEmitterMiddleware(socket),
+    // socketIOSubscriberMiddleware(socket),
+    // socketIOEmitterMiddleware(socket),
   ];
   const middlewareEnhancer = applyMiddleware(...middlewares);
   const storeEnhancers = [middlewareEnhancer, responsiveStoreEnhancer];

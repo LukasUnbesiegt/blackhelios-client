@@ -6,48 +6,51 @@ import Editor from "../../reusable/forms/editor/quill/Editor";
 import SinglePhoto from "../../reusable/forms/files/image_upload/single/PhotoUploadSingle";
 import Editor2 from "../../reusable/forms/editor/Editor";
 import MultiplePhoto from "../../reusable/forms/files/image_upload/multiple/PhotoUploadMultiple";
+import { Button_Styled_MU } from "../../styles/reusable/material_ui/Button";
 class Hero extends Component {
-	state = {
-		doc: null
-	};
+  state = {
+    doc: null,
+  };
 
-	componentDidMount = () => {};
+  componentDidMount = () => {};
 
-	renderHero = () => {
-		return (
-			<div className="container text-center my-2 py-2">
-				<h4 className="display-3">Black Helio Boilerplate</h4>
-				<p>Home Page</p>
+  renderHero = () => {
+    return (
+      <div className="container text-center my-2 py-2">
+        <h4 className="display-3">Black Helio Boilerplate</h4>
+        <p>Home Page</p>
+        <Button_Styled_MU variant="contained">
+          Material UI Button
+        </Button_Styled_MU>
+        <div>
+          <Register />
+        </div>
+        <div>
+          <Editor />
+        </div>
+        <div>
+          <Editor2
+            description="description"
+            initialContent={`<div>sample</div>`}
+          />
+        </div>
+        <div>
+          <MultiplePhoto />
+        </div>
+        <div>
+          <SinglePhoto />
+        </div>
+      </div>
+    );
+  };
 
-				<div>
-					<Register />
-				</div>
-				<div>
-					<Editor />
-				</div>
-				<div>
-					<Editor2
-						description="description"
-						initialContent={`<div>sample</div>`}
-					/>
-				</div>
-				<div>
-					<MultiplePhoto />
-				</div>
-				<div>
-					<SinglePhoto />
-				</div>
-			</div>
-		);
-	};
-
-	render() {
-		return this.renderHero();
-	}
+  render() {
+    return this.renderHero();
+  }
 }
 
-const mapStateToProps = state => ({
-	// locale: state.locale
+const mapStateToProps = (state) => ({
+  // locale: state.locale
 });
 
 const mapDispatchToProps = {};
